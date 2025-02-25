@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="Logo.webp">
+</head>
+<body>
+
+    <div class="floating-icons"></div>
+
+
+    <div class="navbar">
+        <h1>GeoQuest</h1>
+        <nav class="nav-buttons">
+            <a href="index.html"><button>Home</button></a>
+            <button>Menu</button>
+        </nav>
+    </div>
+    <header class="header">
+        <h2>Test Your Geography Skills!</h2>
+        <p>Guess countries, capitals, and landmarks from images. Play now!</p>
+    </header>
+    <div class="wrapperIcon">
+
+
+        <div class="boxIcon">
+            <i class="fa-solid fa-earth-africa" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-cloud" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-location-dot" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-plane" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-mountain" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-book-atlas" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-earth-africa" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-cloud" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-location-dot" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-plane" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-mountain" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-book-atlas" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-earth-africa" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-cloud" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-location-dot" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-plane" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-mountain" style="color: #2a9d8f;"></i>
+            <i class="fa-solid fa-book-atlas" style="color: #2a9d8f;"></i>
+        </div>
+
+
+    <div class="menu">
+
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Guess the Country</h3>
+                    <button class="flip-button">&#8635;</button>
+                    <img src="Images/game1.png" alt="Game 1" width="100%" height="70%">
+                    <a href="game.html"><button class="play-button">Play Game</button></a>
+                </div>
+                <div class="card-back">
+                    <button class="flip-button">&#8635;</button>
+                    <p>Guess the mystery country by entering a country's name! After each guess, you ll receive helpful hints:</p>
+                    <ul>
+                      <li>Whether your guess is in the same <strong>continent</strong> as the target country.</li>
+                      <li>The <strong>difference in population</strong> between your guess and the target.</li>
+                      <li>The <strong>difference in land area</strong> between the two countries.</li>
+                      <li>A <strong>directional hint</strong> guiding you closer based on coordinates.</li>
+                    </ul>
+                    <p>Keep guessing and use the hints wisely to find the correct country in the fewest attempts possible!</p>
+                    <p>(<strong>NOTE!</strong> , make sure you type the name of your guess correctly for it to work)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Geo Locator</h3>
+                    <button class="flip-button">&#8635;</button>
+                    <img src="Images/game2.webp" alt="Game 2" width="100%" height="70%">
+                    <a href="game2.html"><button class="play-button">Play Game</button></a>
+                </div>
+                <div class="card-back">
+                    <button class="flip-button">&#8635;</button>
+                    <p><p>Test your country recognition skills! You have <strong>one minute</strong> to guess the correct country from an image.</p>
+                    <ul>
+                        <li>Choose the correct country from <strong>four options</strong>.</li>
+                        <li>The <strong>faster</strong> you guess correctly, the <strong>higher</strong> your score.</li>
+                        <li>Try to <strong>beat your high score</strong> by making quick and accurate guesses!</li>
+                    </ul>
+                    <p>Stay sharp and race against time to become the ultimate geography champion!</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 GeoQuest. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Flip card function
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+
+
+        // Floating icons
+        window.onload = function () {
+    const icons = document.querySelectorAll(".boxIcon i");
+
+    function setRandomProperties(icon) {
+        const randomTop = Math.random() * 100; // Random position (0% to 100%)
+        const randomLeft = Math.random() * 100; // Random position (0% to 100%)
+        const randomDuration = Math.floor(Math.random() * 9) + 6; // Integer (6 to 14 sec)
+
+        icon.style.position = "absolute"; 
+        icon.style.top = `${randomTop}%`;
+        icon.style.left = `${randomLeft}%`;
+
+        // Reset animation to prevent jumpiness
+        icon.style.animation = "none"; 
+        void icon.offsetWidth; // Force reflow to reset animation
+        icon.style.animation = `animateIcon ${randomDuration}s linear infinite`;
+        
+        // When animation ends, restart with new values
+        setTimeout(() => {
+            setRandomProperties(icon);
+        }, randomDuration * 1000);
+    }
+
+    icons.forEach((icon) => setRandomProperties(icon));
+};
+
+
+    </script>
+</body>
+</html>

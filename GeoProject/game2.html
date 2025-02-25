@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Locator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Logo.webp">
+</head>
+<body>
+    
+
+    <nav class="navbar">
+        <h1>GeoQuest</h1>
+        <div class="nav-buttons">
+            <a href="index.html"><button>Home</button></a>
+            <a href="menu.html"><button>Menu</button></a>
+        </div>
+    </nav>
+    
+    <header class="header">
+        <h2>Geo Locator</h2>
+    </header>
+<div class="imgBackground" id="imgBackground">
+    <div class="gameContainer">
+        <h1>Guess the Country</h1>
+        <button id="startButton" onclick="startGame()">Start Game</button>
+        <p id="timer">Time: 60</p>
+        <p id="scoreDisplay">Score: 0</p>
+        <p id="highScoreDisplay">High Score: 0</p>
+        <p id="message"></p>
+        <img class="countryImage" id="countryImage" src="" alt="Country Image">
+        <div id="choices"></div>
+        <div id="gameOver"></div>
+    </div>
+</div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 GeoQuest. All rights reserved.</p>
+    </footer>
+
+    
+<script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the country</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Logo.webp">
+</head>
+<body>
+    <div class="navbar">
+        <h1>GeoQuest</h1>
+        <div class="nav-buttons">
+           <a href="index.html"><button>Home</button></a>
+            <a href="menu.html"><button>Menu</button></a>
+        </div>
+    </div>
+    <header class="header">
+        <h2>Guess the Country</h2>
+    </header>
+    <div id="Maindiv" class="Maindiv">
+        <div id="gameContainer" class="gameContainer">
+            <p>Guess the country based on the clues provided!</p>
+            <input type="text" id="guess" placeholder="Enter your guess">
+            <button id="Submit">Submit</button>
+            <button id="Surrender">Surrender</button>
+            <div id="gameResult" class="gameResult"></div>
+            <ul>
+                <li id="continent"></li>
+                <li id="population"></li>
+                <li id="area"></li>
+                <li id="coordinates"></li>
+                <img class="Flag" id="flag" src="" alt="">
+            </ul>
+            <p>Guesses: <span id="score">0</span></p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 GeoQuest. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
